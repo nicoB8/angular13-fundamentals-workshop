@@ -124,6 +124,19 @@ mat-card:not(.dashboard-card) {
   .course-details {
     width: 49%;
   }
+
+  mat-card-title {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.favorite-icon {
+  cursor: pointer;
+
+  &:hover {
+    color: #ffd740;
+  }
 }
 
 .login-container {

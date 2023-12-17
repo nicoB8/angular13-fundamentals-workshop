@@ -31,7 +31,7 @@ export class CoursesComponent implements OnInit {
       id: 2,
       title: 'JavaScript The HARDEST PARTS EVER!',
       description: 'Learn the JavaScript like a pro! with Will',
-      percentComplete: 26,
+      percentComplete: 13,
       favorite: true
     }
   ];
@@ -43,7 +43,7 @@ export class CoursesComponent implements OnInit {
   }
 
   selectCourse(course) {
-    this.selectedCourse = course;
+    this.selectedCourse = {...course};
   }
 
   deleteCourse(courseId) {
@@ -52,5 +52,18 @@ export class CoursesComponent implements OnInit {
 
   reset() {
     this.selectCourse({...emptyCourse});
+  }
+
+  save() {
+    if (this.selectedCourse.id !== null) {
+      let courseIndex = this.courses.findIndex(c => c.id === this.selectedCourse.id);
+      if (courseIndex !== -1) {
+        this.courses[courseIndex] = ({...this.selectedCourse});
+      }
+    }
+  }
+
+  toggleSelectedCourseFavorite() {
+    this.selectedCourse.favorite = !this.selectedCourse.favorite;
   }
 }

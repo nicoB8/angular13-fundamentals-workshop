@@ -16,7 +16,7 @@ import { MaterialModule } from './material.module';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   declarations: [AppComponent, HomeComponent, CoursesComponent],
   providers: [],
